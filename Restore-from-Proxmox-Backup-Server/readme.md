@@ -27,3 +27,4 @@ chmod 600 /root/.pve_api_token
 -------------------------------------
 
 <img width="960" height="527" alt="api" src="https://github.com/user-attachments/assets/6dd290a3-cd26-49c1-ac71-9b2ebe590e10" />
+<img width="470" height="155" alt="token" src="https://github.com/user-attachments/assets/c4f4cae6-3ec7-4582-befd-ca96d32f311e" />
