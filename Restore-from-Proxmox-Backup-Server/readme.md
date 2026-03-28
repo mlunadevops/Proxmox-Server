@@ -1,4 +1,6 @@
 
+Este script debe correrse en Proxmox Server donde vas a restaurar el backup desde el Proxmox Backup Server
+
 A Hidden "Secrets" File
 Instead of putting the token in the script, we will put it in a separate file that only the root user can read.
 
@@ -15,7 +17,11 @@ Step 3: Secure the File This is the most important step. We will change the "Per
 sudo chmod 600 /root/.pve_api_token
 
 --------------------------
+ Install:
 
+ apt update && apt install jq -y
+
+------------------------------
 Requiriments:
 
 # 1. Create the file and paste your token inside (Format: root@pam!ID=SECRET)
