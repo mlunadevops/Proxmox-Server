@@ -15,3 +15,11 @@ Step 3: Secure the File This is the most important step. We will change the "Per
 sudo chmod 600 /root/.pve_api_token
 
 --------------------------
+
+Requiriments:
+
+# 1. Create the file and paste your token inside (Format: root@pam!ID=SECRET)
+echo "root@pam!RESTORE_TOKEN=your-secret-here" > /root/.pve_api_token
+
+# 2. Lock the file so only root can read it
+chmod 600 /root/.pve_api_token
