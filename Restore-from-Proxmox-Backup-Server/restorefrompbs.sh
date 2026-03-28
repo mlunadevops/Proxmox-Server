@@ -6,7 +6,7 @@ PVE_URL="https://localhost:8006/api2/json"
 TOKEN_FILE="/root/.pve_api_token"
 
 echo "-------------------------------------------------------"
-echo "   Proxmox Restore Utility - Node: $PVE_NODE"
+echo "    Proxmox Restore Utility - Node: $PVE_NODE"
 echo "-------------------------------------------------------"
 
 # --- 2. Interactive Email Setup ---
@@ -17,7 +17,7 @@ if [ ! -f "$TOKEN_FILE" ]; then
     echo -e "\n[✘] ERROR: Token file not found at $TOKEN_FILE"
     echo "-------------------------------------------------------"
     echo "To fix this, please run the following command as root:"
-    echo "echo 'root@pam!ID=SECRET' > $TOKEN_FILE"
+    echo "echo 'root@pam!restore-script=SECRET' > $TOKEN_FILE"
     echo "chmod 600 $TOKEN_FILE"
     echo "-------------------------------------------------------"
     exit 1
@@ -49,7 +49,7 @@ done
 read -p "Enter number: " STORAGE_INDEX
 SELECTED_STORAGE=${pbs_list[$STORAGE_INDEX]}
 
-# --- 5. List & Select Backup Snapshot ---
+# --- 5. List & Select Backup Snapshot (Local Time) ---
 echo ""
 read -p "Enter VM ID to restore (e.g., 101): " VM_ID
 echo "--- Searching for VM $VM_ID snapshots in $SELECTED_STORAGE ---"
@@ -62,10 +62,15 @@ if [ ${#snapshots[@]} -eq 0 ]; then
     exit 1
 fi
 
-echo "Select the snapshot to RESTORE (Replacing current VM):"
+echo "Select the snapshot to RESTORE (Local Time):"
 for i in "${!snapshots[@]}"; do
-    echo "[$i] ${snapshots[$i]}"
+    # Extract UTC timestamp (e.g. 2026-03-28T20:59:10Z)
+    utc_raw=$(echo "${snapshots[$i]}" | grep -oP '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z')
+    # Convert to Caracas/Local time format
+    local_time=$(date -d "$utc_raw" +"%Y-%m-%d %I:%M:%S %p")
+    echo "[$i] $local_time -- (${snapshots[$i]})"
 done
+
 read -p "Enter number: " SNAP_INDEX
 SELECTED_SNAP=${snapshots[$SNAP_INDEX]}
 
@@ -75,7 +80,7 @@ read -p "Type 'yes' to confirm: " CONFIRM
 
 if [[ "$CONFIRM" == "yes" ]]; then
     START_TIME=$(date)
-    echo "[+] Starting restore process..."
+    echo "[+] Starting restore process... this may take some time."
     
     if qmrestore "$SELECTED_SNAP" "$VM_ID" --force 1 --unique 0; then
         STATUS="SUCCESS"
