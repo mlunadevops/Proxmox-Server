@@ -2,7 +2,11 @@ How to use the script:
 
 VARIABLES:
 
-SOFTWARE DEPENDENCIES IN PROXMOX BACKUP SERVER:
+MOUNT_POINT="/mnt/shared1"
+REMOTE_PATH="//10.0.30.1/Backup101"
+DOMAIN="DJEN"
+
+SOFTWARE DEPENDENCIES IN PROXMOX SERVER (PVE):
 
 1) install cifs-utils: This downloads and installs the specific package needed to handle CIFS (Common Internet File System), which is the protocol Windows uses for sharing folders (SMB).
 
@@ -25,9 +29,11 @@ chmod +x backup1.sh
 COMMAND REFERENCE:
 
 Manual Mount Command: Use this to manually connect to your Windows share.
+
 sudo mount -t cifs "//10.0.30.1/Backup101" /mnt/shared1 \ -o username="{USER}",password="{PASS}",domain="DJEN",vers=3.0
 
-Shared folder (Windows): //10.0.30.1/Backup101 Folder local (Proxmox VE); /mnt/shared1 Username "{USER}": Windows User with privileges in the Shared folder (Windows) Password "{PASS}": Windows Password with privileges in the Shared folder (Windows) domain "DJEN": Windows Active Directory name
+Shared folder (Windows): //10.0.30.1/Backup101 Folder local (Proxmox VE)
+/mnt/shared1 Username "{USER}": Windows User with privileges in the Shared folder (Windows) Password "{PASS}": Windows Password with privileges in the Shared folder (Windows) domain "DJEN": Windows Active Directory name
 
 Manual Backup Command: Use this to trigger a snapshot backup directly to the mount point
 vzdump {VM_ID} --dumpdir /mnt/shared1 --mode snapshot --compress zstd
