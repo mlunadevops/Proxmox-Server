@@ -20,7 +20,9 @@ sudo mkdir -p /mnt/shared1
 
 chmod +x backup1.sh
 
-Command reference:
+--------------------------------
+
+COMMAND REFERENCE:
 
 Manual Mount Command: Use this to manually connect to your Windows share.
 sudo mount -t cifs "//10.0.30.1/Backup101" /mnt/shared1 \ -o username="{USER}",password="{PASS}",domain="DJEN",vers=3.0
@@ -31,3 +33,6 @@ Manual Backup Command: Use this to trigger a snapshot backup directly to the mou
 vzdump {VM_ID} --dumpdir /mnt/shared1 --mode snapshot --compress zstd
 
 VM ID {VM_ID}: VM ID Folder local (Proxmox VE); /mnt/shared5 Mode: snapshot Compress: zstd
+
+
+--------------------------------
