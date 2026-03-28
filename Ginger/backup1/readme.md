@@ -4,19 +4,19 @@ VARIABLES:
 
 SOFTWARE DEPENDENCIES IN PROXMOX BACKUP SERVER:
 
-1). 
-
-install cifs-utils
+1) install cifs-utils: This downloads and installs the specific package needed to handle CIFS (Common Internet File System), which is the protocol Windows uses for sharing folders (SMB).
 
 sudo apt update && sudo apt install cifs-utils -y
 
-Network & Permissions: Shared folder in Windows //10.0.30.1/Backup101:
-SMB Connectivity: The Proxmox node must have network access to 10.0.30.5 on ports 445 and 139
+2) Network & Permissions: Shared folder in Windows //10.0.30.1/Backup101:
 
-Mount Point: The directory /mnt/shared1 must exist on the Proxmox Backup Server before running the script.
+SMB Connectivity: The Proxmox node must have network access to 10.0.30.1 on ports 445 and 139
+
+3) Mount Point: The directory /mnt/shared1 must exist on the Proxmox Backup Server before running the script.
+
 sudo mkdir -p /mnt/shared1
 
-4.Script Permissions: The script file must be executable.
+4) Script Permissions: The script file must be executable.
 
 chmod +x backup1.sh
 
