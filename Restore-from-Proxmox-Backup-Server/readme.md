@@ -23,3 +23,7 @@ echo "root@pam!RESTORE_TOKEN=your-secret-here" > /root/.pve_api_token
 
 # 2. Lock the file so only root can read it
 chmod 600 /root/.pve_api_token
+
+-------------------------------------
+
+<img width="960" height="527" alt="api" src="https://github.com/user-attachments/assets/6dd290a3-cd26-49c1-ac71-9b2ebe590e10" />
