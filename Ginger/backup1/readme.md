@@ -1,5 +1,7 @@
 How to use the script:
 
+This run: 15 minutes and 55 seconds (187.6 MiB/s).
+
 VARIABLES:
 
 MOUNT_POINT="/mnt/shared1"
