@@ -34,9 +34,10 @@ sudo mount -t cifs "//10.0.30.1/Backup101" /mnt/shared1 \ -o username="{USER}",p
 
 Shared folder (Windows): //10.0.30.1/Backup101 Folder local (Proxmox VE)..
 
-/mnt/shared1 Username "{USER}": Windows User with privileges in the Shared folder (Windows)..
-Password "{PASS}": Windows Password with privileges in the Shared folder (Windows)..
-domain "DJEN": Windows domain Active Directory name..
+/mnt/shared1 Username "{USER}": Windows User with privileges in the Shared folder (Windows)  
+Password "{PASS}": Windows Password with privileges in the Shared folder (Windows)  
+domain "DJEN": Windows domain Active Directory name.  
+
 
 2) Manual Backup Command: Use this to trigger a snapshot backup directly to the mount point
 
