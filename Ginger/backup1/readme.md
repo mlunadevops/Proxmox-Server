@@ -1,6 +1,13 @@
 How to use the script:
 
-Software Dependencies in Proxmox Backup Server:
+VARIABLES:
+
+SOFTWARE DEPENDENCIES IN PROXMOX BACKUP SERVER:
+
+1). 
+
+install cifs-utils
+
 sudo apt update && sudo apt install cifs-utils -y
 
 Network & Permissions: Shared folder in Windows //10.0.30.1/Backup101:
