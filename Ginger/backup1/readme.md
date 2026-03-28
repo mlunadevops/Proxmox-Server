@@ -32,6 +32,11 @@ COMMAND REFERENCE:
 
 sudo mount -t cifs "//10.0.30.1/Backup101" /mnt/shared1 \ -o username="{USER}",password="{PASS}",domain="DJEN",vers=3.0
 
+* **Shared folder (Windows):** //10.0.30.1/Backup101
+* **Folder local (Proxmox VE):** /mnt/shared1
+* **Username:** Windows User with privileges...
+* **Password "{PASS}": Windows Password with privileges in the Shared folder (Windows)...
+
 Shared folder (Windows): //10.0.30.1/Backup101 Folder local (Proxmox VE)..
 
 /mnt/shared1 Username "{USER}": Windows User with privileges in the Shared folder (Windows)  
