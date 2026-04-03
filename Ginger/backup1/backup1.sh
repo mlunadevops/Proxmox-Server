@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # --- Variables ---
-MOUNT_POINT="/mnt/shared5"
-REMOTE_PATH="//10.0.30.5/2019"
+MOUNT_POINT="/mnt/shared1"
+REMOTE_PATH="//10.0.30.1/Backup101"
 DOMAIN="DJEN"
 
 # 1. Gather User Input Securely
