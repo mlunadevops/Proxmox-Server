@@ -20,62 +20,60 @@ else
         -o username="$WIN_USER",password="$WIN_PASS",domain="$DOMAIN",vers=3.0
     
     if [ $? -ne 0 ]; then
-        echo "[✘] Error: Bad password or connection failed."
+        echo "[✘] Error: Connection failed."
         exit 1
     fi
     echo "[✓] Mount successful."
 fi
 
-# 3. INTERACTIVE DELETION LOOP
+# 3. INTERACTIVE DELETION LOOP (FORCED RESTART)
 while true; do
-    echo -e "\n--- Current Backups for VM $VM_ID ---"
-    # Refresh the file list array inside the loop
-    files=($(ls $MOUNT_POINT/*vzdump-qemu-$VM_ID* 2>/dev/null))
+    # Clear the previous array and re-scan the folder
+    unset files
+    mapfile -t files < <(ls $MOUNT_POINT/*vzdump-qemu-$VM_ID* 2>/dev/null)
 
+    # If no files found, exit the loop
     if [ ${#files[@]} -eq 0 ]; then
-        echo "No existing backups found for VM $VM_ID."
-        break # Exit loop if no files exist
+        echo -e "\nNo more backups found for VM $VM_ID."
+        break 
     fi
 
-    # Display numbered list
+    echo -e "\n--- Current Backups for VM $VM_ID ---"
     for i in "${!files[@]}"; do
         echo "[$i] $(basename "${files[$i]}")"
     done
 
-    read -p "Enter the number to DELETE (or press Enter to finish cleaning): " FILE_INDEX
+    echo "----------------------------------------------------"
+    read -p "Enter the number to DELETE (or press ENTER to finish): " FILE_INDEX
     
-    # If user presses Enter without a number, exit the loop
+    # If the input is empty, break the loop and move to verification
     if [[ -z "$FILE_INDEX" ]]; then
+        echo "[i] Selection finished."
         break
     fi
 
-    # Validate input and delete
+    # Validate if it's a number and within the range
     if [[ "$FILE_INDEX" =~ ^[0-9]+$ ]] && [ "$FILE_INDEX" -lt "${#files[@]}" ]; then
-        rm -f "${files[$FILE_INDEX]}"
-        echo "[✓] Deleted: ${files[$FILE_INDEX]}"
+        TARGET_FILE="${files[$FILE_INDEX]}"
+        rm -f "$TARGET_FILE"
+        echo "[✓] Deleted: $(basename "$TARGET_FILE")"
+        # We don't break here; the loop starts over automatically
     else
         echo "[!] Invalid selection. Please try again."
     fi
 done
 
-# 4. FINAL VERIFICATION & CONFIRMATION
-echo -e "\n--- FINAL FOLDER STATE ---"
+# 4. FINAL VERIFICATION
+echo -e "\n--- VERIFICATION: Final folder state ---"
 ls -lh "$MOUNT_POINT" | grep "$VM_ID" || echo "No files remain for VM $VM_ID."
 
+# 5. Execute Backup
 echo -e "\nReady to proceed with backup for VM $VM_ID?"
 read -p "Type 'yes' to confirm and start: " CONFIRM
 
-if [[ "$CONFIRM" != "yes" ]]; then
-    echo "[!] Operation cancelled."
-    exit 0
-fi
-
-# 5. Execute Backup
-echo -e "\n[+] Starting backup..."
-vzdump "$VM_ID" --dumpdir "$MOUNT_POINT" --mode snapshot --compress zstd
-
-if [ $? -eq 0 ]; then
-    echo "[✓] Backup completed successfully."
+if [[ "$CONFIRM" == "yes" ]]; then
+    echo -e "\n[+] Starting backup..."
+    vzdump "$VM_ID" --dumpdir "$MOUNT_POINT" --mode snapshot --compress zstd
 else
-    echo "[✘] Backup failed."
+    echo "[!] Operation cancelled."
 fi
