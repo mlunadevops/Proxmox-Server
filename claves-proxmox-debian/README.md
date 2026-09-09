@@ -19,6 +19,8 @@
 
 Proxmox manages different types of authentication called realms:
 
+![BGP WEIGTH](images/00pam&pve.jpg)
+
 * **Linux PAM Realm (`pam`):** Authenticates directly against the underlying host operating system users (those that exist in `/etc/passwd` and `/etc/shadow`).
 * **Proxmox VE Realm (`pve`):** Uses Proxmox's own internal database (`/etc/pve/user.cfg`) managed through the web interface or CLI, independent of Linux system users.
 
@@ -33,7 +35,7 @@ Proxmox manages different types of authentication called realms:
 
 
 
-![BGP WEIGTH](images/01Topologia.jpg)
+
 
  four routers across different Autonomous Systems (AS 100, AS 200, AS 300, and AS 400). Before advertising prefixes, BGP neighbor adjacencies were established on each device.
 
