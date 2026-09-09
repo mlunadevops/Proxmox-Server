@@ -56,7 +56,7 @@ usermod -aG sudo backupuser
 * **2.3) Quick verification (Optional, to confirm group membership):**
 
 ```bash
-groups backupuser
+getent group sudo
 ```
 
 
