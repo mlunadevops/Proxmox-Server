@@ -69,11 +69,12 @@ su - backupuser
 ```
 whoami # Should return: backupuser
 
-Change the root password:
+* **2.5)Execute the root password change (you will be prompted for the `backupuser` password first, and then the new root password twice):**
 
 ```bash
 sudo passwd root
 ```
+
 
 
 ### 4. BGP Configuration:
