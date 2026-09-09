@@ -24,9 +24,14 @@ Proxmox manages different types of authentication called realms:
 
 > **Technical Note:** PAM is used to authenticate users against the underlying Linux operating system accounts (the Proxmox host).
 
+**Important Considerations:**
+
+* **User creation:** For a user to log in via PAM, you must first create them at the system level on the Proxmox host using standard Linux commands (such as `useradd` or `adduser`).
+* **Permissions:** Although the user authenticates through Linux PAM, specific permissions for VM, containers, or storage must be configured within Proxmox (`Datacenter -> Permissions`).
+
 ## 2. Topology and BGP Neighbor Establishment
 
-The topology consists of four routers across different Autonomous Systems (AS 100, AS 200, AS 300, and AS 400). Before advertising prefixes, BGP neighbor adjacencies were established on each device.
+
 
 ![BGP WEIGTH](images/01Topologia.jpg)
 
