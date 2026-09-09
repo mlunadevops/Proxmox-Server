@@ -62,10 +62,15 @@ getent group sudo
 
 > **Technical Note:** The following administrative workflow standardizes user provisioning, privilege assignment, and credential updates for secure cluster management.
 
-* **2.4) Quick verification (Optional, to confirm group membership):**
+* **2.4) Switch to the `backupuser` account and verify the session:**
+* 
 ```bash
 su - backupuser
 ```
+
+
+whoami # Should return: backupuser
+
 
 whoami # Should return: backupuser
 
