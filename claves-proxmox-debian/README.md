@@ -41,13 +41,13 @@ The objective is to change the root password using a temporary administrative ac
 
 These steps must be executed as `root` in the host terminal.
 
-**2.1) Create the user backupuser (if it does not exist):**
+* **2.1) Create the user backupuser (if it does not exist):**
 ```bash
 useradd -m -s /bin/bash backupuser
 ```
 > **Note:** You will be prompted to set a password for `backupuser`.
 
-* **Add the user to the sudo group to obtain administrative privileges:**
+* **2.2)Add the user to the sudo group to obtain administrative privileges:**
 
 ```bash
 usermod -aG sudo backupuser
