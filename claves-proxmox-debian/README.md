@@ -68,9 +68,10 @@ su - backupuser
 
 whoami # Should return: backupuser
 
+Change the root password:
 
 ```bash
-getent group sudo
+sudo passwd root
 ```
 
 
