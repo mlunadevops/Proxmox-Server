@@ -31,7 +31,19 @@ Proxmox manages different types of authentication called realms:
 * **User creation:** For a user to log in via PAM, you must first create them at the system level on the Proxmox host using standard Linux commands (such as `useradd` or `adduser`).
 * **Permissions:** Although the user authenticates through Linux PAM, specific permissions for VM, containers, or storage must be configured within Proxmox (`Datacenter -> Permissions`).
 
-## 2. Topology and BGP Neighbor Establishment
+## 2. Implementation:
+
+## Procedure Summary (Structured and Optimized)
+
+The objective is to change the root password using a temporary administrative account `backupuser`, and then recreate `backupuser` with administrator permissions within Proxmox for secure use.
+
+### PHASE 1: Preparing the backupuser account in the Operating System (Debian Host)
+
+These steps must be executed as `root` in the host terminal.
+
+* **Create the user (if it does not exist):**
+```bash
+useradd -m -s /bin/bash backupuser
 
 
 
