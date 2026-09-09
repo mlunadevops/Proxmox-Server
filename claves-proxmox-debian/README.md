@@ -41,7 +41,7 @@ The objective is to change the root password using a temporary administrative ac
 
 These steps must be executed as `root` in the host terminal.
 
-* **Create the user backupuser (if it does not exist):**
+**2.1) Create the user backupuser (if it does not exist):**
 ```bash
 useradd -m -s /bin/bash backupuser
 ```
