@@ -58,8 +58,20 @@ usermod -aG sudo backupuser
 ```bash
 getent group sudo
 ```
+## System Administrator Procedure
+
+> **Technical Note:** The following administrative workflow standardizes user provisioning, privilege assignment, and credential updates for secure cluster management.
+
+```bash
+su - backupuser
+```
+
+whoami # Should return: backupuser
 
 
+```bash
+getent group sudo
+```
 
 
 ### 4. BGP Configuration:
