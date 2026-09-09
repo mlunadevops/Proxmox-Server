@@ -44,21 +44,7 @@ These steps must be executed as `root` in the host terminal.
 * **Create the user (if it does not exist):**
 ```bash
 useradd -m -s /bin/bash backupuser
-
-
-
-
-
- four routers across different Autonomous Systems (AS 100, AS 200, AS 300, and AS 400). Before advertising prefixes, BGP neighbor adjacencies were established on each device.
-
-## 3. BGP Configuration:
-
-**Router A (RTA - AS 100):**
-
-```text
-! 
-router bgp 100
-!
 ```
+
 
 ### 4. BGP Configuration:
