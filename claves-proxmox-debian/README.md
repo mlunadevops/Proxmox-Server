@@ -15,7 +15,12 @@
 
 ## 1. Introduction and Theoretical Framework
 
-**PAM (*Pluggable Authentication Modules*)** se utiliza para autenticar usuarios utilizando las cuentas del sistema operativo Linux subyacente (el host de Proxmox).
+## 1. PAM Realm vs. PVE Realm
+
+Proxmox manages different types of authentication called realms:
+
+* **Linux PAM Realm (`pam`):** Authenticates directly against the underlying host operating system users (those that exist in `/etc/passwd` and `/etc/shadow`).
+* **Proxmox VE Realm (`pve`):** Uses Proxmox's own internal database (`/etc/pve/user.cfg`) managed through the web interface or CLI, independent of Linux system users.
 
 > **Technical Note:** PAM is used to authenticate users against the underlying Linux operating system accounts (the Proxmox host).
 
