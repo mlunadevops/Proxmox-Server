@@ -15,7 +15,9 @@
 
 ## 1. Introduction and Theoretical Framework
 
+**PAM (*Pluggable Authentication Modules*)** se utiliza para autenticar usuarios utilizando las cuentas del sistema operativo Linux subyacente (el host de Proxmox).
 
+> **Technical Note:** PAM is used to authenticate users against the underlying Linux operating system accounts (the Proxmox host).
 
 ## 2. Topology and BGP Neighbor Establishment
 
