@@ -43,7 +43,7 @@ These steps must be executed as `root` in the host terminal.
 
 * **2.1) Create the user backupuser (if it does not exist):**
 ```bash
-useradd -m -s /bin/bash backupuser
+adduser backupuser
 ```
 > **Note:** You will be prompted to set a password for `backupuser`.
 
