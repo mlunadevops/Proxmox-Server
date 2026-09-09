@@ -1,6 +1,6 @@
-# Documentacion Proxmox Server:
+# Proxmox Server Documentation:
 
-## CONTENIDOS:
+## CONTENT:
 
 | Case | Title | Description |
 | :--- | :--- | :--- |
