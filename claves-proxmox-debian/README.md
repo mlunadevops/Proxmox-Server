@@ -75,6 +75,20 @@ whoami # Should return: backupuser
 sudo passwd root
 ```
 
+### PHASE 3: Creation and Permissions in Proxmox VE (`pve`)
 
+These steps are executed in the host terminal, either as `root` or as `backupuser` via `sudo`.
+
+* **2.6)Create the user in Proxmox VE (using the PAM realm to authenticate against the operating system):**
+
+```bash
+pveum user add backupuser@pam 
+```
+
+* **2.7)Assign the Administrator role to the created user across the entire Proxmox VE Datacenter:**
+
+```bash
+pveum acl modify / -users backupuser@pam -roles Administrator
+```
 
 ### 4. BGP Configuration:
