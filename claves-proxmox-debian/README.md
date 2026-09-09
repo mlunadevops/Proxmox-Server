@@ -45,6 +45,8 @@ These steps must be executed as `root` in the host terminal.
 ```bash
 useradd -m -s /bin/bash backupuser
 ```
+> **Note:** You will be prompted to set a password for `backupuser`.
+
 
 
 ### 4. BGP Configuration:
