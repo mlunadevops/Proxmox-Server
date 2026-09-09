@@ -47,6 +47,11 @@ useradd -m -s /bin/bash backupuser
 ```
 > **Note:** You will be prompted to set a password for `backupuser`.
 
+* **Add the user to the sudo group to obtain administrative privileges:**
+
+```bash
+usermod -aG sudo backupuser
+```
 
 
 ### 4. BGP Configuration:
