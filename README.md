@@ -4,6 +4,6 @@
 
 | Case | Title | Description |
 | :--- | :--- | :--- |
-| **01** | [Script Cambio de Clave Root Segura](./case-02-cambio-clave-proxmox/) | Cambia clave de root de manera segura |
+| **01** | [Script Claves Accesos](./claves-proxmox-debian/) | Fundamentos de Accesos |
 
 
