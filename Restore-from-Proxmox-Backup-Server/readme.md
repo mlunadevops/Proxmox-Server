@@ -68,21 +68,6 @@ echo 'root@pam!restore-script=YOUR_SECRET_HERE' > /root/.pve_api_token
 chmod 600 /root/.pve_api_token
 ```
 
- Install:
-
- apt update && apt install jq -y
-
-------------------------------
-Requiriments:
-
-# 1. Create the file and paste your token inside (Format: root@pam!ID=SECRET)
-echo 'root@pam!RESTORE_TOKEN=mysecret' > /root/.pve_api_token
-
-# 2. Lock the file so only root can read it
-chmod 600 /root/.pve_api_token
-
--------------------------------------
-
 ### Step 4: Create and Host the Script
 Create a directory for your administration tools and save the script:
 
@@ -95,6 +80,19 @@ Paste the script code, save it, and grant it execution permissions:
 ```text
 chmod +x /root/scripts/restorefrompbs/restorefrompbs.sh
 ```
+
+------------------------------
+Requiriments:
+
+# 1. Create the file and paste your token inside (Format: root@pam!ID=SECRET)
+echo 'root@pam!RESTORE_TOKEN=mysecret' > /root/.pve_api_token
+
+# 2. Lock the file so only root can read it
+chmod 600 /root/.pve_api_token
+
+-------------------------------------
+
+
 
 -------------------------------------------------------------------------------------------
 
