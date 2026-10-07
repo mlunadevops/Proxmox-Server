@@ -52,6 +52,7 @@ To allow the script to communicate with the Proxmox API automatically:
 
 ![CREATING API TOKEN](images/01APItoken.png)
 
+![CREATING API TOKEN](images/02APItokenPermisos.png)
      
 4. Copy the generated **Secret** value (it is only shown once).
 
