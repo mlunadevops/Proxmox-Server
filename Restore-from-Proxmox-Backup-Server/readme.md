@@ -57,6 +57,8 @@ Create the token file in the path expected by the script and assign restrictive 
 ```text
 echo 'root@pam!restore-script=YOUR_SECRET_HERE' > /root/.pve_api_token
 ```
+*(Replace `YOUR_SECRET_HERE` with the actual secret obtained in Step 2).*
+
 ```text
 chmod 600 /root/.pve_api_token
 ```
