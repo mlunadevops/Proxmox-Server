@@ -99,6 +99,20 @@ chmod 600 /root/.pve_api_token
 
 -------------------------------------
 
+### Step 4: Create and Host the Script
+Create a directory for your administration tools and save the script:
+
+```text
+mkdir -p /root/scripts/restorefrompbs
+nano /root/scripts/restorefrompbs/restorefrompbs.sh
+```
+Paste the script code, save it, and grant it execution permissions:
+
+```text
+chmod +x /root/scripts/restorefrompbs/restorefrompbs.sh
+```
+
+
 DATACENTER - PERMISSIONS - TOKEN
 
 <img width="960" height="527" alt="api" src="https://github.com/user-attachments/assets/6dd290a3-cd26-49c1-ac71-9b2ebe590e10" />
