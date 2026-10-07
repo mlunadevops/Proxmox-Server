@@ -49,6 +49,10 @@ To allow the script to communicate with the Proxmox API automatically:
    - **User:** `root@pam`
    - **Token ID:** `restore-script`
    - **Privilege Separation:** Uncheck (to inherit full root permissions).
+
+![CREATING API TOKEN](images/01APItoken.png)
+
+     
 4. Copy the generated **Secret** value (it is only shown once).
 
 ### Step 3: Configure the Credentials File on the Node
@@ -63,7 +67,7 @@ echo 'root@pam!restore-script=YOUR_SECRET_HERE' > /root/.pve_api_token
 chmod 600 /root/.pve_api_token
 ```
 
-![BGP WEIGTH](images/01Topologia.jpg)
+
 
 
 Este script debe correrse en Proxmox Server donde vas a restaurar el backup desde el Proxmox Backup Server
