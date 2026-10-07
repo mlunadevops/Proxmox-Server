@@ -68,27 +68,6 @@ echo 'root@pam!restore-script=YOUR_SECRET_HERE' > /root/.pve_api_token
 chmod 600 /root/.pve_api_token
 ```
 
-
-
-
-Este script debe correrse en Proxmox Server donde vas a restaurar el backup desde el Proxmox Backup Server
-
-A Hidden "Secrets" File
-Instead of putting the token in the script, we will put it in a separate file that only the root user can read.
-
-Step 1: Create the Secrets File, Create a hidden file in the root directory:
-
-sudo nano /root/.pve_api_token
-
-Step 2: Add your Token, paste your token into this file and save it:
-
-root@pam!RESTORE_TOKEN=xxxx-xxxx-xxxx-xxxx
-
-Step 3: Secure the File This is the most important step. We will change the "Permissions" so that only the root user can see the file. No one else on the system can read it.
-
-sudo chmod 600 /root/.pve_api_token
-
---------------------------
  Install:
 
  apt update && apt install jq -y
@@ -117,6 +96,27 @@ Paste the script code, save it, and grant it execution permissions:
 chmod +x /root/scripts/restorefrompbs/restorefrompbs.sh
 ```
 
+-------------------------------------------------------------------------------------------
+
+
+Este script debe correrse en Proxmox Server donde vas a restaurar el backup desde el Proxmox Backup Server
+
+A Hidden "Secrets" File
+Instead of putting the token in the script, we will put it in a separate file that only the root user can read.
+
+Step 1: Create the Secrets File, Create a hidden file in the root directory:
+
+sudo nano /root/.pve_api_token
+
+Step 2: Add your Token, paste your token into this file and save it:
+
+root@pam!RESTORE_TOKEN=xxxx-xxxx-xxxx-xxxx
+
+Step 3: Secure the File This is the most important step. We will change the "Permissions" so that only the root user can see the file. No one else on the system can read it.
+
+sudo chmod 600 /root/.pve_api_token
+
+--------------------------
 
 DATACENTER - PERMISSIONS - TOKEN
 
