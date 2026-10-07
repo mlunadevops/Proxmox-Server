@@ -51,6 +51,8 @@ To allow the script to communicate with the Proxmox API automatically:
    - **Privilege Separation:** Uncheck (to inherit full root permissions).
 4. Copy the generated **Secret** value (it is only shown once).
 
+### Step 3: Configure the Credentials File on the Node
+Create the token file in the path expected by the script and assign restrictive security permissions:
 
 
 ![BGP WEIGTH](images/01Topologia.jpg)
