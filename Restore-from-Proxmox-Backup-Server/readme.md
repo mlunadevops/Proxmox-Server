@@ -54,6 +54,10 @@ To allow the script to communicate with the Proxmox API automatically:
 ### Step 3: Configure the Credentials File on the Node
 Create the token file in the path expected by the script and assign restrictive security permissions:
 
+```text
+echo 'root@pam!restore-script=YOUR_SECRET_HERE' > /root/.pve_api_token
+chmod 600 /root/.pve_api_token
+```
 
 ![BGP WEIGTH](images/01Topologia.jpg)
 
