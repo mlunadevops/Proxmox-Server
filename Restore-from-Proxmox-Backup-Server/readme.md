@@ -56,10 +56,6 @@ To allow the script to communicate with the Proxmox API automatically:
 ![BGP WEIGTH](images/01Topologia.jpg)
 
 
-
-
-
-
 Este script debe correrse en Proxmox Server donde vas a restaurar el backup desde el Proxmox Backup Server
 
 A Hidden "Secrets" File
