@@ -33,9 +33,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
 
 ![PBS Post-Install](images/01PBS.png)
 
-
-
-**1.2) Enter the virtual environment:**
+**1.2) This scripts (prepare.sh), create a datastore and prepare the physical disk in RAID 1 or alone if you want.**
 
 ```text
 cd csr1kv
