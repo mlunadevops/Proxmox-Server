@@ -23,10 +23,9 @@
 
 ## 3. IMPLEMENTATION:
 
-**Parts 1 and 2:** Create a Python virtual environment (venv).
-We are going to create an "isolated space" to install pyATS without affecting the VM's base system.
+The script is designed for Proxmox Backup Server (PBS) and will give options to Disable the Enterprise Repo, Add/Correct PBS Sources, Enable the No-Subscription Repo, Add Test Repo, Disable Subscription Nag, Update Proxmox Backup Server and Reboot PBS:
 
-**1.1)** The script is designed for Proxmox Backup Server (PBS) and will give options to Disable the Enterprise Repo, Add/Correct PBS Sources, Enable the No-Subscription Repo, Add Test Repo, Disable Subscription Nag, Update Proxmox Backup Server and Reboot PBS:
+**1.1)** Run the following command:
 
 ```text
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pbs-install.sh)"
