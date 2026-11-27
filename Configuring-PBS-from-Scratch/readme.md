@@ -31,6 +31,10 @@ The script is designed for Proxmox Backup Server (PBS) and will give options to 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pbs-install.sh)"
 ```
 
+![PBS Post-Install](images/01PBS.png)
+
+
+
 **1.2) Enter the virtual environment:**
 
 ```text
