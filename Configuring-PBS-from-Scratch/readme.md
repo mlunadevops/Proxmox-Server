@@ -7,15 +7,20 @@
 
 ## CONTENT:
 
-| Case | Title | Description |
-| :--- | :--- | :--- |
-| **01** | [Claude & n8n AI Agents](./case-01-Google-Auth/) | Agentes Claude . |
 
 [Comunity Scripts](https://community-scripts.org/scripts/post-pbs-install?id=post-pbs-install&category=Proxmox%20&%20Virtualization=)
 
 ## 1. Introduction and Theoretical Framework
 
-**Proxmox Backup Server:** Performs backup and restoration of VMs, containers, and physical hosts, and is characterized by its high efficiency, security, and support for off-site storage.
+**Proxmox Backup Server:** Performs backup and restoration of VMs, containers, and physical hosts, and is characterized by its high efficiency, security, and support for off-site storage. Feactures:
+
+**Deduplication and incrementals:** PBS divides data into blocks and removes duplicates, storing only the blocks that have changed since the previous backup.
+
+**Security and encryption:** It supports client-side encryption (AES-256-GCM), data is encrypted before being sent to the server.
+
+**Verification:** It incorporates **SHA-256** verification to guarantee data integrity and prevent silent data corruption.
+
+**Remote synchronization and tapes:** It enables efficient data synchronization between remote sites **(it only transfers the differences)**.
 
 ## 2. Topology and BGP Neighbor Establishment
 
