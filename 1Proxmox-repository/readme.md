@@ -13,17 +13,12 @@
 
 **This scripts (prepare.sh)**: create a datastore and prepare the physical disk in **RAID 1** or alone if you want.
 
-This script streamlines the post-installation storage setup for Proxmox Backup Server. It detects the system disk to prevent accidental wipes, configures ZFS (Single or Mirror), and integrates the new storage directly into the PBS management system.
-
 ## Context and problem:
 
-
-This process is repetitive, prone to human error (especially the risk of deleting the OS disk), and not standardized across installations. The script automates the entire flow with prior security validations.
 
 ## Variables (User Input):
 
 Variable	Origen	Descripción	Ejemplo / Valores:
-
 
 ## Key Funcionalities:
 
@@ -31,18 +26,13 @@ Variable	Origen	Descripción	Ejemplo / Valores:
 
 ## Use Case:
 
-Use this script when you need to connect a Proxmox VE (PVE) node to your Backup Server. Instead of sharing the master password, you create a unique user for that specific node and its designated storage.
+Use this script when you 
 
 ## Logic & Flow:
 
 **Verification:** Checks the health of the pool and confirms registration within the PBS environment.
 
-Script detects and displays the available physical disks in PBS, allows you to create a **RAID 1** in software with the disks you specify, and will create a **ZFS datastore** (the place where backups will be stored). The variables that the user must add are:
-
-Script Overview (prepare.sh): Automated ZFS Pool & PBS Datastore Creator:
-
 ![Flujo](images/preparedisk.svg)
-
 
 ## 2. IMPLEMENTATION:
 
