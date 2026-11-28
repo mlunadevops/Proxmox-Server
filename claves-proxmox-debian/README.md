@@ -7,12 +7,6 @@
 
 ## CONTENT:
 
-| Case | Title | Description |
-| :--- | :--- | :--- |
-| **01** | [Claude & n8n AI Agents](./case-01-Google-Auth/) | Agentes Claude . |
-
-[Google](https://www.google.com)
-
 ## 1. Introduction and Theoretical Framework
 
 ## 1. PAM Realm vs. PVE Realm
@@ -90,5 +84,3 @@ pveum user add backupuser@pam
 ```bash
 pveum acl modify / -users backupuser@pam -roles Administrator
 ```
-
-### 4. BGP Configuration:
