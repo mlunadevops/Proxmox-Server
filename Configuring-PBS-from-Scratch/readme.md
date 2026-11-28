@@ -15,7 +15,7 @@
 
 ## 1. Introduction and Theoretical Framework
 
-**pyATS =** The infrastructure for organizing, running, and reporting automated network tests in a professional way.
+**Proxmox Backup Server:** Performs backup and restoration of VMs, containers, and physical hosts, and is characterized by its high efficiency, security, and support for off-site storage.
 
 ## 2. Topology and BGP Neighbor Establishment
 
