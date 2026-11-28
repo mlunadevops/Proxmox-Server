@@ -54,33 +54,6 @@ This script provides options for managing Proxmox VE repositories, including dis
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 ```
 
-![PVE Post-Install](images/01PBS.png)
-
-**2.2) This scripts (prepare.sh), create a datastore and prepare the physical disk in RAID 1 or alone if you want.**
-
-```text
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/mlunadevops/Proxmox-Backup-Server-Tools/main/1.prepare%20disks/prepare.sh)"
-```
-![Implementar Datastores](images/02curl.png)
-
-## 3. USER OUTPUTS:
-
-Pantallas:
-
-**3.1)** Displays the available physical disks.
-
- <img width="576" height="240" alt="image" src="https://github.com/user-attachments/assets/3f83d1ed-9d16-4df8-a5fe-bc8860eea372" />
-
-**3.2)** Requests the variables:
-
-**EMAIL:** The email address where Proxmox Backup Server (PBS) will send alerts.
-
-**DISK_A_RAW:** The identifier of the first physical disk you want to use.
-
-**DISK_B_RAW:** The identifier of the second disk (only if creating a Mirror).
-
-**POOL_NAME:** A custom name for your new ZFS storage pool and PBS datastore.
-
-<img width="649" height="333" alt="image" src="https://github.com/user-attachments/assets/99cede99-7303-443e-9109-e6b02d58f254" />
+![PVE Post-Install](images/01PVEinstall.png)
 
 
